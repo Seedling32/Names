@@ -59,8 +59,8 @@ echo '<section>';
 echo '<h2 style="text-decoration: underline">Unique Full Names</h2>';
 echo ("<p>There are " . sizeof($uniqueValidNames) . " Unique full names</p>");
 echo '<ul style="list-style-type:none">';    
-    foreach($uniqueValidNames as $uniqueValidNames) {
-        echo "<li>$uniqueValidNames</li>";
+    foreach($uniqueValidNames as $uniqueValidName) {
+        echo "<li>$uniqueValidName</li>";
     }
 echo "</ul>";
 echo '</section>';
@@ -69,8 +69,8 @@ echo '<section>';
 echo '<h2 style="text-decoration: underline">Unique Last Names</h2>';
 echo ("<p>There are " . sizeof($uniqueValidLastNames) . " Unique last names</p>");
 echo '<ul style="list-style-type:none">';    
-    foreach($uniqueValidLastNames as $uniqueValidLastNames) {
-        echo "<li>$uniqueValidLastNames</li>";
+    foreach($uniqueValidLastNames as $uniqueValidLastName) {
+        echo "<li>$uniqueValidLastName</li>";
     }
 echo "</ul>";
 echo '</section>';
@@ -79,8 +79,8 @@ echo '<section>';
 echo '<h2 style="text-decoration: underline">Unique First Names</h2>';
 echo ("<p>There are " . sizeof($uniqueValidFirstNames) . " Unique first names</p>");
 echo '<ul style="list-style-type:none">';    
-    foreach($uniqueValidFirstNames as $uniqueValidFirstNames) {
-        echo "<li>$uniqueValidFirstNames</li>";
+    foreach($uniqueValidFirstNames as $uniqueValidFirstName) {
+        echo "<li>$uniqueValidFirstName</li>";
     }
 echo "</ul>";
 echo '</section>';
