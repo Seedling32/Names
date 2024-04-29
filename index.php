@@ -9,6 +9,11 @@ $firstNames = load_first_names($fullNames);
 $lastNames = load_last_names($fullNames);
 $validFullNames = load_valid_names($fullNames, $firstNames, $lastNames);
 
+$uniqueValidNames = (array_unique($validFullNames));
+$uniqueValidLastNames = (array_unique($lastNames));
+$uniqueValidFirstNames = (array_unique($firstNames));
+
+
 // $findMe = ',';
 // echo $fullNames[0] . '<br>';
 // echo strpos($fullNames[0], $findMe) . '<br>';
@@ -35,12 +40,27 @@ echo '<ul style="list-style-type:none">';
     }
 echo "</ul>";
 
-echo '<h2>Unique Names</h2>';
-$uniqueValidNames = (array_unique($validFullNames));
-echo ("<p>There are " . sizeof($uniqueValidNames) . " Unique names</p>");
+echo '<h2>Unique Full Names</h2>';
+echo ("<p>There are " . sizeof($uniqueValidNames) . " Unique full names</p>");
 echo '<ul style="list-style-type:none">';    
     foreach($uniqueValidNames as $uniqueValidNames) {
         echo "<li>$uniqueValidNames</li>";
     }
+echo "</ul>";
 
+echo '<h2>Unique Last Names</h2>';
+echo ("<p>There are " . sizeof($uniqueValidLastNames) . " Unique last names</p>");
+echo '<ul style="list-style-type:none">';    
+    foreach($uniqueValidLastNames as $uniqueValidLastNames) {
+        echo "<li>$uniqueValidLastNames</li>";
+    }
+echo "</ul>";
+
+echo '<h2>Unique First Names</h2>';
+echo ("<p>There are " . sizeof($uniqueValidFirstNames) . " Unique first names</p>");
+echo '<ul style="list-style-type:none">';    
+    foreach($uniqueValidFirstNames as $uniqueValidFirstNames) {
+        echo "<li>$uniqueValidFirstNames</li>";
+    }
+echo "</ul>";
 ?>
