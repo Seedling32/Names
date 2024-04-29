@@ -27,6 +27,17 @@ function load_first_names($fullNames) {
   return $firstNames;
 }
 
+function load_valid_first_names($firstNames)
+{
+  // Get valid last names
+  for ($i = 0; $i < sizeof($firstNames); $i++) {
+    if (ctype_alpha($firstNames[$i])) {
+      $validFirstNames[$i] = $firstNames[$i];
+    }
+  }
+  return $validFirstNames;
+}
+
 function load_last_names($fullNames) {
   // Get all last names
   foreach ($fullNames as $fullName) {
@@ -34,6 +45,16 @@ function load_last_names($fullNames) {
     $lastNames[] = substr($fullName, 0, $stopHere);
   }
   return $lastNames;
+}
+
+function load_valid_last_names($lastNames) {
+  // Get valid last names
+  for ($i = 0; $i < sizeof($lastNames); $i++) {
+    if (ctype_alpha($lastNames[$i])) {
+      $validLastNames[$i] = $lastNames[$i];
+    }
+  }
+  return $validLastNames;
 }
 
 function load_valid_names($fullNames, $firstNames, $lastNames) {
@@ -47,4 +68,24 @@ function load_valid_names($fullNames, $firstNames, $lastNames) {
     }
   }
   return $validFullNames;
+}
+
+function common_names($array) {
+  $nameCounts = array_count_values($array);
+  $maxCount = max($nameCounts);
+
+  $mostCommonNames = array_keys($nameCounts, $maxCount);
+  $mostCommonName = $mostCommonNames[0];
+
+  return $mostCommonName;
+}
+
+function max_occurrences($array) {
+  $nameCounts = array_count_values($array);
+
+  foreach($nameCounts AS $nameCount) {
+    $highestCounts[] = $nameCount;
+  }
+  $highestCount = max($highestCounts);
+  return $highestCount;
 }

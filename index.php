@@ -6,13 +6,20 @@ $fileName = 'names-short-list.txt';
 $fullNames = load_full_names($fileName);
 
 $firstNames = load_first_names($fullNames);
+$validFirstNames = load_valid_first_names($firstNames);
 $lastNames = load_last_names($fullNames);
+$validLastNames = load_valid_last_names($lastNames);
 $validFullNames = load_valid_names($fullNames, $firstNames, $lastNames);
 
 $uniqueValidNames = (array_unique($validFullNames));
-$uniqueValidLastNames = (array_unique($lastNames));
-$uniqueValidFirstNames = (array_unique($firstNames));
+$uniqueValidLastNames = (array_unique($validLastNames));
+$uniqueValidFirstNames = (array_unique($validFirstNames));
 
+$mostCommonLastName = common_names($lastNames);
+$lastNameOccurrences = max_occurrences($lastNames);
+
+$mostCommonFirstName = common_names($firstNames);
+$firstNameOccurrences = max_occurrences($firstNames);
 
 // $findMe = ',';
 // echo $fullNames[0] . '<br>';
@@ -63,4 +70,12 @@ echo '<ul style="list-style-type:none">';
         echo "<li>$uniqueValidFirstNames</li>";
     }
 echo "</ul>";
+
+echo '<h2>Most Common Last Names</h2>';
+echo ("<p>The most common last name in this file is $mostCommonLastName.</p>");
+echo ("<p>It appears $lastNameOccurrences time(s).</p>");
+
+echo '<h2>Most Common First Names</h2>';
+echo ("<p>The most common first name in this file is $mostCommonFirstName.</p>");
+echo ("<p>It appears $firstNameOccurrences time(s).</p>");
 ?>
